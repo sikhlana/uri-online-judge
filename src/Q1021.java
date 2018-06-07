@@ -8,7 +8,7 @@ public class Q1021 {
         double amount = Double.parseDouble(reader.readLine());
 
         System.out.println("NOTAS:");
-        for (Notes note : Notes.values()) {
+        for (Note note : Note.values()) {
             while (note.amount <= amount) {
                 note.increment();
                 amount = round(amount - note.amount);
@@ -18,7 +18,7 @@ public class Q1021 {
         }
 
         System.out.println("MOEDAS:");
-        for (Cents cent : Cents.values()) {
+        for (Cent cent : Cent.values()) {
             while (cent.amount <= amount) {
                 cent.increment();
                 amount = round(amount - cent.amount);
@@ -33,7 +33,7 @@ public class Q1021 {
     }
 }
 
-enum Notes {
+enum Note {
     HUNDRED(100),
     FIFTY(50),
     TWENTY(20),
@@ -44,7 +44,7 @@ enum Notes {
     int count = 0;
     double amount;
 
-    Notes(double amount) {
+    Note(double amount) {
         this.amount = amount;
     }
 
@@ -57,7 +57,7 @@ enum Notes {
     }
 }
 
-enum Cents {
+enum Cent {
     HUNDRED(1),
     FIFTY(0.50),
     TWENTY_FIVE(0.25),
@@ -68,7 +68,7 @@ enum Cents {
     int count = 0;
     double amount;
 
-    Cents(double amount) {
+    Cent(double amount) {
         this.amount = amount;
     }
 
